@@ -32,7 +32,7 @@ def solution(filename):
         return math.ceil(result/2.0)
 
 def validposition(p, width, height):
-    return (0 <= p[1] < width) and (0 <= p[0] < height)
+    return (0 <= p[0] < width) and (0 <= p[1] < height)
 
 
 def getsymbol(arr, pos):
