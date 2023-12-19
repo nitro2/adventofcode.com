@@ -22,7 +22,7 @@ def solution(filename, expand_factor=2):
         emptycol = [i for i in range(len(a[0])) if checkemptyspace(a[:, i])]
         # print("emptycol", emptycol)
     
-        # Finish expand universe
+        # Find galaxies
         galaxies = np.where(a == '#')
         gal = list(zip(galaxies[0], galaxies[1]))
         #gal = [(0, 3), (1, 7), (2, 0), (4, 6), (5, 1), (6, 9), (8, 7), (9, 0), (9, 4)]
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     assert distance((9,0), (9,4), emptycol, emptyrow) == 5 #Between galaxy 8 and galaxy 9: 5
 
 
-    # Test
+    # Test - part 1
     res = solution("input11.sample.1.txt", 2)
     assert res == 374
 
