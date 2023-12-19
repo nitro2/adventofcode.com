@@ -20,8 +20,8 @@ def solution(filename):
             if j >= 0:
                 S = (j,i)
 
-        printarr(arr)
-        print('S=', S)
+        # printarr(arr)
+        # print('S=', S)
         width =  len(data[0])
         height = len(data)
 
@@ -51,8 +51,8 @@ def solution(filename):
                         currmark = c
                     else:
                         currmark = 0
-                print(transform[symbol],end=' ')
-            print()
+                # print(transform[symbol],end=' ')
+            # print()
 
         # print("Count =", result)
         # return math.ceil(result/2.0)
@@ -162,7 +162,7 @@ def findloop(arr, p, init, width, height, searched, marker):
                 
             import time
             time.sleep(1)
-            print("end for d - p={} d={} np={} nextdirlist={}".format(p,d,np, nextdirlist))
+            # print("end for d - p={} d={} np={} nextdirlist={}".format(p,d,np, nextdirlist))
 
 
 
@@ -170,13 +170,13 @@ def findloop(arr, p, init, width, height, searched, marker):
 if __name__ == '__main__':
     # Test
     # res = solution("input10.sample.1.txt")
-    # assert res == 1
+    # # assert res == 1
 
-    res = solution("input10.2.sample.2.txt")
-    assert res == 8
+    # res = solution("input10.2.sample.2.txt")
+    # assert res == 8
 
-    res = solution("input10.2.sample.3.txt")
-    assert res == 10
+    # res = solution("input10.2.sample.3.txt")
+    # assert res == 10
 
     filename = sys.argv[1]
     res = solution(filename)
