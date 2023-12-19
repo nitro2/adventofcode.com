@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args" : ["${workspaceFolder}/2023/day08/input08.sample.1.txt"],
+            "args" : ["${workspaceFolder}/2023/day10/input10.sample.1.txt"],
             "cwd": "${fileDirname}",
             "purpose":["debug-in-terminal"]
         }
