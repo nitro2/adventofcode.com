@@ -1,8 +1,5 @@
 import sys
 import numpy as np
-from collections import Counter
-import heapq
-
 
 class Dir:
     #      (y, x)
@@ -53,7 +50,6 @@ def solution(filename):
         draw_graph(graph, vector, direction, length)
         
         result = count_cubic(graph)
-        # result = polygon_area(vector)
 
         print("Result:", result)
         return result
@@ -146,19 +142,6 @@ def count_cubic(graph):
     return count
                 
 
-# Calculate area base on https://en.wikipedia.org/wiki/Shoelace_formula
-def polygon_area(V):
-    # Initialize area
-    area = 0
-    print(V)
-    n = len(V)
-    j = n - 1
-    for i in range(0, n):
-        area += (V[j][0] - V[i][0]) * (V[j][1] + V[i][1])
-        j = i
-    res =  int(abs(area / 2))
-    print(res)
-    return res
 
 
 if __name__ == '__main__':
