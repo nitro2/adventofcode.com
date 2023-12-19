@@ -13,7 +13,7 @@ def solution(filename, numcycle):
         printarr(data)
         printdebug()
         data, result = cycle(data, numcycle)
-        printarr(data, debug="on")
+        # printarr(data, debug="on")
         print("Result:", result)
         return result
 
@@ -28,7 +28,7 @@ def cycle(data, numcycle=0):
         printdebug("-"*100)
         data = go_east(data)
         acc = get_load(data)
-        print("Cycle", i, "acc", acc)
+        print("Cycle", i+1, "acc", acc)
     return data, acc
 
 def get_load(data):
@@ -96,9 +96,35 @@ def go_east(data):
 
 
 if __name__ == '__main__':
-    assert solution("input14.sample.txt", numcycle = 12) == 64
-    assert solution("input14.txt") == 64
+    # Calculate after 100 cycle:
+    # Cycle start at Cycle 3, period = 7
+    # (100-3)%7 = 6 ==> Cycle 100 = Cycle 6+3 = Cycle 9
+    # assert solution("input14.sample.txt", numcycle = 100) == 68 #-> period=7
+    
+    
+    # Calculate after 1000 cycles:
+    # Cycle start at Cycle 105, period = 13
+    '''
+    Cycle 106 acc 87286
+    Cycle 107 acc 87284
+    Cycle 108 acc 87282
+    Cycle 109 acc 87264
+    Cycle 110 acc 87258
+    Cycle 111 acc 87272
+    Cycle 112 acc 87286
+    Cycle 113 acc 87288
+    Cycle 114 acc 87271
+    Cycle 115 acc 87266
+    Cycle 116 acc 87273
+    Cycle 117 acc 87287
+    Cycle 118 acc 87292
+    '''
+    # (1000-105)%13 = 11  ==> Cycle 1000 = Cycle 11+105 = Cycle 116 = 87273
+    assert solution("input14.txt", 1000) == 87273 #--> period=13
+    
+    # (1000000000-105)%13 + 105 = 116 -> Cycle 116 acc 87273
+    # assert solution("input14.txt", 1000000000) == 87273
 
-    filename = sys.argv[1]
-    res = solution(filename)
+    # filename = sys.argv[1]
+    # res = solution(filename)
 
