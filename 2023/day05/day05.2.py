@@ -42,26 +42,30 @@ def solution(filenaem):
         # output seed pair list
 
         # maps contains: seed-to-soil, soil-to-fertilizer, fertilizer-to-water, etc.
-        # for m in maps:
-        #     process_list = seed_to_soil(m, process_list)
-  
-        return min(process_list[::2])
+        for m in maps:
+            print("process_list", process_list)
+            process_list = seed_to_soil(m, process_list)
+            print("output_list", process_list)
+        return min(map(lambda x:x[0], process_list))
 
 
 def seed_to_soil(m, process_list):
     output_list = []
     for p in process_list:
-        v = p[0]
-        l = p[1]
+        print("Process",p)
+        ov = v = p[0]
+        ol = l = p[1]
+
         for line in m:
             dest, source, length = [int(x) for x in line] # eg: 50 98 2
             if source <= v < source + length:
-                            v = dest + (v-source)
-                            if v+l > source+length :
-                                # append undefined seed to next list
-                                process_list.append((v, l-(source+length-v)))
-                                l = length - (v - source)
-                            break # stop searching here
+                ov = dest + (v-source)
+                if v+l > source+length :
+                    # append undefined seed to next list
+                    process_list.append((v+(source+length-v), l-(source+length-v)))
+                    ol = length - (v - source)
+                    break
+        output_list.append((ov,ol))
     return output_list
 
 def union_difference(ir, cr):
@@ -69,4 +73,6 @@ def union_difference(ir, cr):
 
 if __name__ == '__main__':
     filename = sys.argv[1]
+    # filename = '/Users/nngo/Projects/Dreamer/adventofcode.com/2023/day05/input05.sample.short.txt'
     print("Result:", solution(filename))
+
