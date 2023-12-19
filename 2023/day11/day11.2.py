@@ -15,17 +15,11 @@ def solution(filename, expand_factor=2):
         print(a)
 
         # Get empty row
-        emptyrow = []
-        for i in range(len(a)):
-            if checkemptyspace(a[i, :]):
-                emptyrow.append(i)
+        emptyrow = [i for i in range(len(a)) if checkemptyspace(a[i, :])]
         # print("emptyrow", emptyrow)
 
         # Get empty column
-        emptycol = []
-        for i in range(len(a[0])):
-            if checkemptyspace(a[:, i]):
-                emptycol.append(i)
+        emptycol = [i for i in range(len(a[0])) if checkemptyspace(a[:, i])]
         # print("emptycol", emptycol)
     
         # Finish expand universe
@@ -48,11 +42,8 @@ def distance(g1, g2, emptycol, emptyrow, expand_factor=2):
     y1 = min(g1[1], g2[1])
     er = list(filter(lambda x: x1<x<x2, emptyrow))
     ec = list(filter(lambda y: y1<y<y2, emptycol))
-    # print(x1,y1,x2,y2)
-    # print("d=",ec,er, x2-x1 + y2-y1)
 
-    d =  x2-x1 + y2-y1 + (len(ec)+len(er))*(expand_factor-1)
-    return d
+    return x2-x1 + y2-y1 + (len(ec)+len(er))*(expand_factor-1)
 
 
 if __name__ == '__main__':
