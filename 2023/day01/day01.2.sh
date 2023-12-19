@@ -1,0 +1,1 @@
+ ./day01_replace.sh | ./day01.1.sh  
