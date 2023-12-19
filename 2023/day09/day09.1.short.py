@@ -1,4 +1,5 @@
 import sys
+import itertools
 
 def find_next(series):
     nextnum = series[-1]
@@ -6,6 +7,12 @@ def find_next(series):
         series = list(map(lambda x, y: y - x, series[:-1], series[1:]))
         nextnum += series[-1]
     return nextnum
+
+def predicate(x):
+    return set(x) != {0}
+
+def find_next2(series):
+    itertools.takewhile(predicate, list(map(lambda x, y: y - x, series[:-1], series[1:])))
 
 def solution(filename):
     with open(filename, "r") as fi:
