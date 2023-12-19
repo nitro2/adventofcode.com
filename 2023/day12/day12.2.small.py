@@ -11,7 +11,7 @@ def solution(filename):
         result = sum([arrangement_part2(line) for line in data])
         print("Result:", result)
         return result
-
+called = 0
 def arrangement(line):
     springs , records = line.rstrip().split()
     records = list(map(int,records.split(',')))
@@ -27,13 +27,17 @@ def arrangement_part2(line):
     records = list(map(int,records.split(',')))*5
     springs = '?'.join([springs]*5)
     print(springs, records)
+    global called
+    called = 0
     a = buildtree(springs, records, 0)
-
+    print("arrangement2", a, "called", called)
     # print("arrangement2", a)
-    # print("="*100)
+    print("="*100)
     return a
 
 def buildtree(springs, records, currdamage=0, debugtree=[]):
+    global called
+    called += 1
     # print("{} \t{} {} {}".format("".join(debugtree),springs, records, currdamage))
     if len(springs) == 0:
         if currdamage == 0 and len(records)==0:
@@ -65,24 +69,24 @@ def buildtree(springs, records, currdamage=0, debugtree=[]):
 
 
 if __name__ == '__main__':
-    assert arrangement(".#.###.# 1,3,1") == 1
-    assert arrangement("???.### 1,1,3") == 1
-    assert arrangement(".??..??...?##. 1,1,3") == 4
-    assert arrangement("?#?#?#?#?#?#?#? 1,3,1,6") == 1
-    assert arrangement("????.#...#... 4,1,1") == 1
-    assert arrangement("????.######..#####. 1,6,5") == 4
-    assert arrangement("?###???????? 3,2,1") == 10
+    # assert arrangement(".#.###.# 1,3,1") == 1
+    # assert arrangement("???.### 1,1,3") == 1
+    # assert arrangement(".??..??...?##. 1,1,3") == 4
+    # assert arrangement("?#?#?#?#?#?#?#? 1,3,1,6") == 1
+    # assert arrangement("????.#...#... 4,1,1") == 1
+    # assert arrangement("????.######..#####. 1,6,5") == 4
+    # assert arrangement("?###???????? 3,2,1") == 10
 
-    assert arrangement_part2(".#.###.# 1,3,1") == 1
-    assert arrangement_part2("???.### 1,1,3") == 1
+    # assert arrangement_part2(".#.###.# 1,3,1") == 1
+    # assert arrangement_part2("???.### 1,1,3") == 1
     assert arrangement_part2(".??..??...?##. 1,1,3") == 16384
-    assert arrangement_part2("?#?#?#?#?#?#?#? 1,3,1,6") == 1
-    assert arrangement_part2("????.#...#... 4,1,1") == 16
-    assert arrangement_part2("????.######..#####. 1,6,5") == 2500
+    # assert arrangement_part2("?#?#?#?#?#?#?#? 1,3,1,6") == 1
+    # assert arrangement_part2("????.#...#... 4,1,1") == 16
+    # assert arrangement_part2("????.######..#####. 1,6,5") == 2500
     assert arrangement_part2("?###???????? 3,2,1") == 506250
 
 
-    # # Test
+    # # # Test
     # assert solution("input12.sample.1.txt") == 525152
 
 

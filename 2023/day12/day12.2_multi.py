@@ -7,7 +7,7 @@ def printarr(data):
 def solution(filename):
     with open(filename, "r") as fi:
         data = fi.readlines()
-        result = sum([arrangement(line) for line in data])
+        result = sum([arrangement_part2_improve(line) for line in data])
         # print("Result:", result)
         print(result)
         return result
