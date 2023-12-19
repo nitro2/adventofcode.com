@@ -18,9 +18,7 @@ def solution(filenaem):
         for x,y in zip(time, distance):
             x1 = (x+math.sqrt(x*x-4*y))/2
             x2 = (x-math.sqrt(x*x-4*y))/2
-            d=  math.floor(x1) - math.ceil(x2) + 1
-            d -= x1.is_integer()*1 + x2.is_integer()*1
-            # print(x,y,x1,x2,d)
+            d =  math.floor(x1) - math.ceil(x2) + 1 - x1.is_integer()*1 - x2.is_integer()*1
             res *= d
 
         return res
