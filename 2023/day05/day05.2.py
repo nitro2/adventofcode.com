@@ -2,7 +2,7 @@ import sys
 import re
 
 
-def solution(filenaem):
+def solution(filename):
     with open(filename, "r") as fi:
         data = fi.read()
         # print(data)
@@ -43,16 +43,16 @@ def solution(filenaem):
 
         # maps contains: seed-to-soil, soil-to-fertilizer, fertilizer-to-water, etc.
         for m in maps:
-            print("process_list", process_list)
+            # print("process_list", process_list)
             process_list = seed_to_soil(m, process_list)
-            print("output_list", process_list)
+            # print("output_list", process_list)
         return min(map(lambda x:x[0], process_list))
 
 
 def seed_to_soil(m, process_list):
     output_list = []
     for p in process_list:
-        print("Process",p)
+        # print("Process",p)
         ov = v = p[0]
         ol = l = p[1]
 
@@ -68,8 +68,6 @@ def seed_to_soil(m, process_list):
         output_list.append((ov,ol))
     return output_list
 
-def union_difference(ir, cr):
-    max(ir[0])
 
 if __name__ == '__main__':
     filename = sys.argv[1]
