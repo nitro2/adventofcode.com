@@ -1,5 +1,4 @@
 import sys
-import re
 
 def solution(lines):
     # print(lines)
@@ -8,7 +7,6 @@ def solution(lines):
     # Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
     #  game  - subsets
     # index  - 
-    r = re.compile('Game (\d+):(.*)')
     result = 0
     for line in lines:
         game, subsets = line.split(':')
@@ -29,7 +27,7 @@ def solution(lines):
 
         print(index, d)
     
-    print("Final result:", result)
+    return result
 
 
 if __name__ == '__main__':
