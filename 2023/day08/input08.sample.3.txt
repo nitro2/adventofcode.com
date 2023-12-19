@@ -1,0 +1,10 @@
+LR
+
+TTA = (TTB, ZZZ)
+TTB = (ZZZ, TTZ)
+TTZ = (TTB, ZZZ)
+UUA = (UUB, ZZZ)
+UUB = (UUC, UUC)
+UUC = (UUZ, UUZ)
+UUZ = (UUB, UUB)
+ZZZ = (ZZZ, ZZZ)
