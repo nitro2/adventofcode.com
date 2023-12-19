@@ -14,7 +14,7 @@ def solution(filename):
         for line in data[2:]:
             node_list.update(parse_node(line))
         
-        print("instruction", instruction)
+        # print("instruction", instruction)
 
         # Get all node ending 'A'
         start_point = [k for k,v in node_list.items() if k.endswith('A')]
@@ -28,7 +28,7 @@ def solution(filename):
                     next_node = node_list[node][0] if ins == 'L' else node_list[node][1]
                     # print("node={} ins={} next_node={}".format(node, ins, next_node))
                     count +=1
-                    print(next_node)
+                    # print(next_node)
                     node = next_node
                     if node.endswith('Z'):
                         break
