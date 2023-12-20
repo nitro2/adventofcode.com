@@ -1,0 +1,128 @@
+====================================================================================================
+%fl tf, gz
+%xb hl, tl
+%mq tf, fl
+%px hl, tm
+%dp xv
+broadcaster js, ng, lb, gr
+[('broadcaster', False, 'js'), ('broadcaster', False, 'ng'), ('broadcaster', False, 'lb'), ('broadcaster', False, 'gr')]
+&ql rx
+%gk hm
+%vp vf, sn
+%fp xb
+&lr ss, rm, dc, js, gk, dp, bq
+%xl gx, lr
+%xx hb
+%cb jg
+&hl nj, lb, tl, xx, hb, fp, mf
+%vr tf, hq
+%bq gk
+%jg qn
+%hb qk
+%qk hs, hl
+%gz tf
+%rm hj
+&tf cb, jg, fz, gr, zj, qn, kb
+%qn td
+%js lr, dc
+%qb nc
+%zj vr
+%td tf, zj
+%tl kg
+%gx lr
+%hm lr, rd
+&fh ql
+%nj xx
+%hq kb, tf
+%kg px, hl
+%dc dp
+%vf th, sn
+&mf ql
+%tm hl
+&fz ql
+%xd tn, sn
+%ng vp, sn
+%th qb
+%rd xl, lr
+%bt xd, sn
+%tv sn
+%nl bt
+%hs fp, hl
+%xv rm, lr
+%tn sn, tv
+%hj lr, bq
+&ss ql
+%sd nl
+&sn sd, fh, th, qb, nl, ng, nc
+%kb mq
+%lb nj, hl
+%gr tf, cb
+%nc sd
+['mq'].Flipflop.fl.['tf', 'gz']
+['fp'].Flipflop.xb.['hl', 'tl']
+['kb'].Flipflop.mq.['tf', 'fl']
+['kg'].Flipflop.px.['hl', 'tm']
+['lr', 'dc'].Flipflop.dp.['xv']
+['fh', 'mf', 'fz', 'ss'].Conjunction.ql.['rx']
+['lr', 'bq'].Flipflop.gk.['hm']
+['ng'].Flipflop.vp.['vf', 'sn']
+['hl', 'hs'].Flipflop.fp.['xb']
+['xl', 'js', 'gx', 'hm', 'rd', 'xv', 'hj'].Conjunction.lr.['ss', 'rm', 'dc', 'js', 'gk', 'dp', 'bq']
+['rd'].Flipflop.xl.['gx', 'lr']
+['hl', 'nj'].Flipflop.xx.['hb']
+['tf', 'gr'].Flipflop.cb.['jg']
+['xb', 'px', 'qk', 'kg', 'tm', 'hs', 'lb'].Conjunction.hl.['nj', 'lb', 'tl', 'xx', 'hb', 'fp', 'mf']
+['zj'].Flipflop.vr.['tf', 'hq']
+['lr', 'hj'].Flipflop.bq.['gk']
+['cb', 'tf'].Flipflop.jg.['qn']
+['xx', 'hl'].Flipflop.hb.['qk']
+['hb'].Flipflop.qk.['hs', 'hl']
+['fl'].Flipflop.gz.['tf']
+['lr', 'xv'].Flipflop.rm.['hj']
+['fl', 'mq', 'vr', 'gz', 'td', 'hq', 'gr'].Conjunction.tf.['cb', 'jg', 'fz', 'gr', 'zj', 'qn', 'kb']
+['jg', 'tf'].Flipflop.qn.['td']
+['lr'].Flipflop.js.['lr', 'dc']
+['th', 'sn'].Flipflop.qb.['nc']
+['tf', 'td'].Flipflop.zj.['vr']
+['qn'].Flipflop.td.['tf', 'zj']
+['xb', 'hl'].Flipflop.tl.['kg']
+['xl'].Flipflop.gx.['lr']
+['gk'].Flipflop.hm.['lr', 'rd']
+['sn'].Conjunction.fh.['ql']
+['hl', 'lb'].Flipflop.nj.['xx']
+['vr'].Flipflop.hq.['kb', 'tf']
+['tl'].Flipflop.kg.['px', 'hl']
+['lr', 'js'].Flipflop.dc.['dp']
+['vp'].Flipflop.vf.['th', 'sn']
+['hl'].Conjunction.mf.['ql']
+['px'].Flipflop.tm.['hl']
+['tf'].Conjunction.fz.['ql']
+['bt'].Flipflop.xd.['tn', 'sn']
+['sn'].Flipflop.ng.['vp', 'sn']
+['vf', 'sn'].Flipflop.th.['qb']
+['hm'].Flipflop.rd.['xl', 'lr']
+['nl'].Flipflop.bt.['xd', 'sn']
+['tn'].Flipflop.tv.['sn']
+['sd', 'sn'].Flipflop.nl.['bt']
+['qk'].Flipflop.hs.['fp', 'hl']
+['dp'].Flipflop.xv.['rm', 'lr']
+['xd'].Flipflop.tn.['sn', 'tv']
+['rm'].Flipflop.hj.['lr', 'bq']
+['lr'].Conjunction.ss.['ql']
+['sn', 'nc'].Flipflop.sd.['nl']
+['vp', 'vf', 'xd', 'ng', 'bt', 'tv', 'tn'].Conjunction.sn.['sd', 'fh', 'th', 'qb', 'nl', 'ng', 'nc']
+['tf', 'hq'].Flipflop.kb.['mq']
+['hl'].Flipflop.lb.['nj', 'hl']
+['tf'].Flipflop.gr.['tf', 'cb']
+['qb', 'sn'].Flipflop.nc.['sd']
+Conjunction lr send HIGH at cycle 1
+Conjunction sn send HIGH at cycle 1
+Conjunction hl send HIGH at cycle 1
+Conjunction tf send HIGH at cycle 1
+Conjunction ql send HIGH at cycle 1
+Conjunction mf send HIGH at cycle 3761
+Conjunction fz send HIGH at cycle 3793
+Conjunction fh send HIGH at cycle 3847
+Conjunction ss send HIGH at cycle 3881
+times 100000 total_low_pulse 1668862 total_high_pulse 4751103
+Result: 7928935254786
