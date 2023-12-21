@@ -58,6 +58,7 @@ broadcaster js, ng, lb, gr
 %lb nj, hl
 %gr tf, cb
 %nc sd
+rx_generator ['fh', 'mf', 'fz', 'ss']
 ['mq'].Flipflop.fl.['tf', 'gz']
 ['fp'].Flipflop.xb.['hl', 'tl']
 ['kb'].Flipflop.mq.['tf', 'fl']
@@ -120,9 +121,14 @@ Conjunction sn send HIGH at cycle 1
 Conjunction hl send HIGH at cycle 1
 Conjunction tf send HIGH at cycle 1
 Conjunction ql send HIGH at cycle 1
+Conjunction ql send HIGH at cycle 1
+Conjunction lr send HIGH at cycle 2
+Conjunction sn send HIGH at cycle 2
+Conjunction hl send HIGH at cycle 2
+Conjunction tf send HIGH at cycle 2
 Conjunction mf send HIGH at cycle 3761
 Conjunction fz send HIGH at cycle 3793
 Conjunction fh send HIGH at cycle 3847
 Conjunction ss send HIGH at cycle 3881
-times 100000 total_low_pulse 1668862 total_high_pulse 4751103
-Result: 7928935254786
+times 5000 total_low_pulse 83381 total_high_pulse 237437
+Result: 19797734497

@@ -60,7 +60,7 @@ class Conjunction(Module):
         self.output = output
         self.pulse_high = 0
         self.pulse_low = 0
-        self.print = False
+        self.print = 2
 
     def create_input(self, inname):
         self.inputlist[inname] = LOW
@@ -72,15 +72,12 @@ class Conjunction(Module):
         # send LOW if all inputs are HIGH
         # otherwise send HIGH
         if all(self.inputlist.values()) == HIGH:
-            # if not self.print:
-            #     print("Conjunction {} at cycle {}".format(self.name, cycles))
-            #     self.print = True
             self.pulse_low += len(self.output)
             return [(self.name, LOW, o) for o in self.output], len(self.output), 0
         else:
-            if not self.print:
+            if self.print > 0:
                 print("Conjunction {} send HIGH at cycle {}".format(self.name, cycles))
-                self.print = True
+                self.print -= 1
             self.pulse_high += len(self.output)
             return [(self.name, HIGH, o) for o in self.output], 0, len(self.output)
 
@@ -120,12 +117,18 @@ def part1(filename, times=1000):
                     print("Error", inmodule)
                     raise
 
+        rx_generator = list()
         # Create inputs for each module using output list
         for name, module in modules.items():
             for n in module.get_output():
-                    if modules.get(n):
-                        modules[n].create_input(name)
-        
+                if modules.get(n):
+                    modules[n].create_input(name)
+                # Find rx module:
+                if n == "ql": # generate ql
+                    rx_generator.append(module.name)
+
+        print("rx_generator", rx_generator)
+
         # Print the structure:
         for name, module in modules.items():
             print(module)
@@ -199,8 +202,11 @@ if __name__ == '__main__':
     # assert part1("input20.sample.2.txt", times=3) ==  (4+4+5)*(4+2+3) 
     # assert part1("input20.sample.2.txt", times=4) ==  (4+4+5+4)*(4+2+3+2)
     # assert part1("input20.sample.2.txt", times=1000) == 11687500
-    assert part1("input20.txt", times=100000) == 0
+    # assert part1("input20.txt", times=100000) == 0
     # assert part1("input20.txt", times=100000000) == 0
+
+    # For the Fox
+    assert part1("input20.txt", times=5000) == 0
 
     # filename = sys.argv[1]
     # res = part1(filename)
